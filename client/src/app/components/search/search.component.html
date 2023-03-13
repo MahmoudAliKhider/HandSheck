@@ -1,0 +1,5 @@
+<div class="search">
+  <input #s type="text" placeholder="Search Form Product !" (keyup.enter)="search(s.value)" [value]="searchCategory" />
+  <button (click)="search(s.value)">Search</button>
+
+</div>

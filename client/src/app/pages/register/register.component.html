@@ -1,0 +1,42 @@
+<mat-grid-list cols="1" rowHeight="500px" *ngIf="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="width-50">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstName" matInput placeholder="first_name" >
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width-50 ml-2">
+        <mat-label>Lastname</mat-label>
+        <input formControlName="lastName" matInput placeholder="last_name" >
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="width-100">
+        <mat-label>Email address</mat-label>
+        <input formControlName="email" matInput placeholder="Ex. pat@example.com">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="width-100">
+        <mat-label>Enter password</mat-label>
+        <input formControlName="password" placeholder="Enter your Password" matInput [type]="hide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="width-100">
+        <mat-label>PhoneNumber</mat-label>
+        <input formControlName="phoneNumber" type="number" matInput placeholder="+20">
+      </mat-form-field>
+      <br><br>
+      <div class="button">
+        <button type="submit" mat-button mat-raised-button color="primary"
+          [disabled]="registerForm.invalid">SignUp</button>
+        <div class="login">
+          <a routerLink="/login">I already Have Acount</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-grid-list>

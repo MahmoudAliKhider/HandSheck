@@ -1,0 +1,26 @@
+@import "./src/styles/_colors.scss";
+
+mat-grid-list {
+  background:#fafafa;
+  color: $mainColor;
+  border: 3px solid;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  margin-top: 130px;
+  width: 30%;
+  left: 30%;
+  padding: 40px;
+  bottom: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+
+  button{
+   left: 34%;
+   width: 130px;
+  }
+  
+}
+.width-50{width: 49%;}
+.ml-1{margin-left: 4%;}
+.ml-2{margin-left: 2%;}
+.width-100{width: 100%;margin-top: 30px;}
+.width-25{width: 25%;}

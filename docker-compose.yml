@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+#Frontend services
+  client:
+    build: .
+    ports:
+      - 4200:80
+    networks:
+      - webnet
+    depends_on:
+      - mongodb
+      - api
+    links:
+      - api   
+
+#mongo service
+  mongodb:
+    container_name: db_contaioner
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - webnet  
+
+  #node Api 
+  api:
+    build: .
+    restart: always  
+    ports:
+      - 3000:3000
+    networks:
+      - webnet  
+    volumes:
+      - .:/usr/src/app
+    environment:
+      DB_CONNECTION: 'mongodb://mongodb:27017/ecommerce'
+      PORT: 3000
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+
+networks:
+  webnet : {}
+
+volumes:
+  mongodb : {}
+

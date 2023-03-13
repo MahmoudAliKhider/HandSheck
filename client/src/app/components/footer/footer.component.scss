@@ -1,0 +1,30 @@
+@import './src/styles/_colors.scss';
+.footer {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  color: $mainColor;
+  border-top: 1px solid;
+  box-shadow: 0 3px 5px 1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+
+  .left{
+    display: flex;
+    padding-bottom: 0px;
+    height: 30px;
+   img{
+      background-size: cover;
+      max-width: 40px;
+      max-height: 40px;
+      padding-left: 20px;
+    }
+    h2 a{
+      text-decoration: none;
+      color: $mainColor;
+      padding-left: 30px;
+    }
+  }
+
+
+}
+
+

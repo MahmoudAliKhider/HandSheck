@@ -1,0 +1,19 @@
+@import "./src/styles/_colors.scss";
+
+section {
+  text-align: center;
+  padding-top: 120px;
+  margin-top: 21%;
+  border: 3px solid $mainColor;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px 1px #0003, 3px 6px 10px #00000024, 0 1px 18px #0000001f;
+  width: 40%;
+  height: 30%;
+  position: relative;
+  left: 420px;
+  bottom: 24%;
+  color: $mainColor;
+  mat-form-field {
+    width: 400px;
+  }
+}

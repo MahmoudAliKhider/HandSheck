@@ -1,0 +1,19 @@
+<section *ngIf="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" type="email" matInput placeholder="Ex. meow@example.com" />
+
+      <mat-error *ngIf="loginForm.get('email')!.errors?.['pattern']">Enter a valid email.</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password"  matInput placeholder="Enter your password" />
+    </mat-form-field>
+    <br />
+    <button mat-raised-button type="submit" color="primary" [disabled]="loginForm.invalid">
+      Login
+    </button>
+  </form>
+</section>

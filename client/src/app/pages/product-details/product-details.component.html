@@ -1,0 +1,18 @@
+<mat-card class="details" *ngIf="product">
+  <mat-card-title class="title"> {{product.title | uppercase}}</mat-card-title>
+  <img mat-card-image [src]="product.imgUrl" alt="Photo of a Shiba Inu">
+  <mat-card-content class="description">
+    <h1>
+      <h2>This is a simple description of what this product does:-</h2>
+      <br>
+      {{product.description}}
+    </h1>
+    <br><br>
+  </mat-card-content>
+  <mat-card-content class="category">
+    <h2>Category: {{product.category }}</h2>
+  </mat-card-content>
+  <mat-card-content class="price">
+    <h2>{{product.price |currency}}</h2>
+  </mat-card-content>
+</mat-card>

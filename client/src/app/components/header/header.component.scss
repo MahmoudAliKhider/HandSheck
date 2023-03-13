@@ -1,0 +1,72 @@
+@import "./src/styles/_colors.scss";
+
+mat-toolbar {
+  .toolbar1 {
+    background-color: $mainColor;
+    padding: 20px;
+    height: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    color: $white;
+    padding: 7px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    img {
+      background-size: cover;
+      max-width: 40px;
+      max-height: 40px;
+      padding-left: 20px;
+      font-size: 25px;
+      font-weight: 100;
+      margin-right: 28px;
+    }
+    .branch {
+      width: 100%;
+      a {
+        display: flexbox;
+        margin-left: 2%;
+        font-family: var(
+          --mdc-typography-button-font-family,
+          var(--mdc-typography-font-family, Roboto, sans-serif)
+        );
+        font-size: var(--mdc-typography-button-font-size, 14px);
+        text-align: center;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        &:active{
+          background-color: rgba(0, 0, 0, 0.4);
+
+        }
+      }
+    }
+    .active{
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .Auth {
+      position: absolute;
+      left: 88%;
+      top: 10px;
+      a {
+        margin-left: 9px;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        &:active {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "./src/styles/_colors.scss";
+.container{
+  height: 110%;
+  .toolbar{
+    height: 65%;
+    background-color: $mainColor;
+    color: white;
+    font-size: large;
+    font-weight: 400;
+    margin-top: -70px;
+    padding-bottom: 0px;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    h1{
+      position: relative;
+      text-align: center;
+      top: 180px;
+      color: $white;
+      font-size: 70px;
+      font-weight: 600;
+      font-family:cursive;
+    }
+    p{
+      position: relative;
+      text-align: center;
+      top: 200px;
+      color: $white;
+    }
+    .button{
+      position: relative;
+      left: 46%;
+      top: 250px;
+      font-family:'Times New Roman', Times, serif;
+    }
+  }
+}

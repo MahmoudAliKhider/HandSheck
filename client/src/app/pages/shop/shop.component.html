@@ -1,0 +1,37 @@
+<app-search></app-search>
+
+<div class="container">
+  <mat-card class="product-data" *ngFor="let product of products | paginate:{
+    itemsPerPage:pageSize,
+    currentPage:pageNumber,
+    totalItems: total };">
+
+    <mat-card-header>
+      <img mat-card-avatar class="header-image" [src]="product.imgUrl" alt="header-image">
+      <mat-card-title class="title">{{product.title}}</mat-card-title>
+      <mat-card-subtitle class="title">{{product.category}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img class="image" mat-card-image [src]="product.imgUrl" alt="product image">
+
+    <mat-card-content class="cart-body">
+      <p>{{product.description | slice:0:50 }}</p>
+      <h2>{{product.price |currency}}</h2>
+    </mat-card-content>
+
+    <mat-card-actions class="button-actions">
+      <button class="details" mat-button [routerLink]="['/shop/', product.id]">Details</button>
+      <button mat-button *ngIf="!addButton" (click)="addButton=true">Order</button>
+      <div class="count" *ngIf="addButton">
+        <input type="number" placeholder="Add count">
+        <button mat-button (click)="add();addButton=false">ADD</button>
+      </div>
+    </mat-card-actions>
+
+  </mat-card>
+  <div class="pagination">
+    <pagination-controls previousLabel="prev" nextLabel="next" (pageChange)="pageNumber=($event)">
+
+    </pagination-controls>
+  </div>
+</div>

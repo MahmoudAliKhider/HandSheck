@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <mat-toolbar class="toolbar1">
+    <img src="/assets/images/mainIcon.png" alt="icon project">
+    <div class="pages">
+      <div class="branch" matripple >
+        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Home</a>
+        <a mat-button routerLink="/shop" routerLinkActive="active">Shop</a>
+        <a mat-button routerLinkActive="active" >Dashboard</a>
+      </div>
+      <div class="Auth" *ngIf="isAuth">
+        <a mat-button (click)="logout()"  routerLinkActive="active">Logout</a>
+
+      </div>
+      <div class="Auth" *ngIf="!isAuth" >
+        <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
+        <a mat-button routerLink="/register" routerLinkActive="active">Register </a>
+      </div>
+    </div>
+  </mat-toolbar>
+</mat-toolbar>
